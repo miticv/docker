@@ -1,0 +1,20 @@
+# Download MySql Workbench:
+# https://www.mysql.com/products/workbench/
+# Install Service:
+# docker stack deploy -c docker-compose.yml pat
+
+
+version: '3.5'
+
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "PassW@r6"
+    volumes:
+      - mysql-datavolume:/var/lib/mysql
+
+volumes:
+  mysql-datavolume:

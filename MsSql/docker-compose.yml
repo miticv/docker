@@ -1,0 +1,18 @@
+# Download SSMS:
+# https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017
+# Install Service:
+# docker stack deploy -c docker-compose.yml pat
+
+version: '3.5'
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
+    environment:
+      SA_PASSWORD: "PassW@r6"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql-datavolume:/var/opt/mssql
+volumes:
+  mssql-datavolume:
