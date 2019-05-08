@@ -2,7 +2,7 @@
 # https://www.mysql.com/products/workbench/
 # Install Service:
 # docker stack deploy -c docker-compose.yml pat
-
+# docker service scale pat_mysql=0
 
 version: '3.5'
 
